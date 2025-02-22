@@ -1,6 +1,15 @@
-# DisasterResponse
-In this project, a comprehensive analysis of a vast dataset comprising thousands of authentic messages sourced from Figure 8 is conducted. These messages were dispatched during natural disasters through various channels, including social media and direct communication with disaster response organizations. In the initial phase, objective is to construct a robust ETL (Extract, Transform, Load) pipeline for the systematic processing of message and category data stored in CSV files. The processed data will be stored in an SQLite database, serving as the foundation for our subsequent machine learning and Natural Language Processing (NLP) pipelines.
+# Disaster Response Pipeline Project
 
-After the clean data has been stored in the database, it will be processed using Count Vectorization and TfIdf Transformation and utilized to classify messages to 36 categories using a MultiOutput Classifier. 
+### Instructions:
+1. Run the following commands in the project's root directory to set up your database and model.
 
-To note, project is still under development and in the final phase of the project, it is planned to deploy classification model within a  Flask-based web application. This application will incorporate interactive Plotly dashboards, enabling efficient data visualization and message classification.
+    - To run ETL pipeline that cleans data and stores in database
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+    - To run ML pipeline that trains classifier and saves
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+
+2. Go to `app` directory: `cd app`
+
+3. Run your web app: `python run.py`
+
+4. Click the `PREVIEW` button to open the homepage
